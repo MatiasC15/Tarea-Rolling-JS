@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const names = [];
+const ages = [];
+
+for (let i = 1; i <= 3; i++) {
+  const name = prompt(`Introduce el nombre ${i}:`);
+  const age = parseInt(prompt(`Introduce la edad de ${name}:`));
+
+  nombres.push(name);
+  edades.push(age);
+}
+
+const olderAge = Math.max(...ages); //aqui uso el operador de propagacion para desempaquetar el array en sus elementos individuales y ver cual es el elemento mayor
+const higherIndex = ages.indexOf(olderAge); // uso el método indexOf() para encontrar el índice en el array ages que corresponde a la posición del valor máximo, y lo guardo en la variable higherIndex.
+const olderName = names[higherIndex];
+
+alert(`La persona mayor es ${olderName}, con ${olderAge} años.`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let continuar = true;
+
+      while (continuar) {
+        let nota = prompt("Introduce tu nota (0-10):");
+
+        if (isNaN(nota)) {
+          alert("Introduce un número válido");
+        } else if (nota < 0 || nota > 10) {
+          alert("Número erróneo");
+        } else if (nota >= 0 && nota <= 2) {
+          alert("Muy deficiente");
+        } else if (nota >= 3 && nota <= 4) {
+          alert("Insuficiente");
+        } else if (nota >= 5 && nota <= 6) {
+          alert("Suficiente");
+        } else if (nota == 7) {
+          alert("Bien");
+        } else if (nota >= 8 && nota <= 9) {
+          alert("Notable");
+        } else if (nota == 10) {
+          alert("Sobresaliente");
+        }
+
+        continuar(confirm("Quieres introducir otra nota?"));
+      }
+
+      alert("Programa terminado");
+
+      // otra forma
+      //   const calificaciones = ['Muy deficiente', 'Muy deficiente', 'Insuficiente', 'Insuficiente', 'Suficiente', 'Suficiente', 'Bien', 'Notable', 'Notable', 'Sobresaliente'];
+
+      // const nota = parseInt(prompt('Introduce tu nota (0-10):'));
+      // const calificacion = nota >= 0 && nota <= 10 ? calificaciones[Math.floor(nota)] : 'Número erróneo';
+
+      // alert(calificacion);
+    </script>
+  </body>
+</html>

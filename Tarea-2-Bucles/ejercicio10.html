@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- // 10- Realiza un script que pida número de filas y columnas y escriba una tabla. Dentro de cada una de las celdas deberá escribirse un número consecutivo en orden descendente. Si, por ejemplo, la tabla es de 7×5 los números irán del 35 al 1. -->
+    <script>
+      let keepAsking = true;
+      while (keepAsking) {
+        let row = parseInt(prompt("Ingrese un numero de filas"));
+        let column = parseInt(prompt("Ingrese un numero de columnas"));
+        if (
+          row === null ||
+          isNaN(row) ||
+          (row === 0 && column === null) ||
+          isNaN(column) ||
+          column === 0
+        ) {
+          keepAsking = confirm(
+            "Ha ingresado incorrecatamente valores para filas o columnas, desea intentar de nuevo?"
+          );
+          continue;
+        }
+        if (row > 0 && column > 0) {
+          alert("Su tabla sera de: " + row + " x " + column);
+        }
+
+        let matriz = [];
+        let counter = row * column;
+        for (let i = 0; i < row; i++) {
+          let finalResult = "";
+          for (let j = 0; j < column; j++) {
+            finalResult += contador.toString().padStart(2, "0") + "   ";
+            counter--;
+          }
+          console.log(finalResult);
+        }
+
+        break;
+      }
+
+      alert("Ejecucion finalizada, consulte la consola para ver el resultado")
+    </script>
+  </body>
+</html>

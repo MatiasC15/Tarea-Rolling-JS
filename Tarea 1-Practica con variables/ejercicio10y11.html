@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 10.- Escribe un programa que pida un número y nos diga si es divisible por 2, 3, 5 o 7 (sólo hay que comprobar si lo es por uno de los cuatro) -->
+    <script>
+      let numero = parseInt(prompt("Introduce un número:"));
+let divisores = ""; // variable auxiliar para almacenar los divisores del número
+
+if (numero % 2 == 0) {
+  divisores += "2 y "; //equivalente a divisores = divisores + "2 y "
+} 
+if (numero % 3 == 0) {
+  divisores += "3 y "; //equivalente a divisores = divisores + "3 y "
+} 
+if (numero % 5 == 0) {
+  divisores += "5 y "; //equivalente a divisores = divisores + "5 y "
+} 
+if (numero % 7 == 0) {
+  divisores += "7 y "; //equivalente a divisores = divisores + "7 y "
+}
+
+if (divisores.length > 0) {
+  document.write(numero + " es divisible por " + divisores.slice(0, -2));
+} else {
+  document.write(numero + " no es divisible por 2, 3, 5 ni 7");
+}
+
+    </script>
+  </body>
+</html>

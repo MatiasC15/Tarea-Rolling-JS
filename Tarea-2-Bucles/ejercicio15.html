@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Realiza un script que cuente el número de vocales que tiene un texto. -->
+    <script>
+      let keepAsking = true;
+
+      while (keepAsking) {
+        let text = prompt("Ingrese texto deseado");
+        if (text === null) {
+          alert("No se detecto texto valido");
+          keepAsking = confirm("Desea continuar?");
+          continue;
+        }
+        if (!isNaN(text)) {
+          alert("No ingresó texto válido");
+          continue;
+        }
+        let increment = 0;
+        for (let i = 0; i < text.length; i++) {
+          let letter = text.charAt(i).toLowerCase();
+          if (
+            letter === "a" ||
+            letter === "e" ||
+            letter === "i" ||
+            letter === "o" ||
+            letter === "u"
+          ) {
+         increment++;
+          }
+        }
+        console.log(`El texto "${text}" tiene ${increment} vocales.`);
+  break;
+    }
+    alert("Programa terminado, consulte la consola")
+    </script>
+  </body>
+</html>

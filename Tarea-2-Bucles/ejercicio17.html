@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 17- Realiza un script que muestre la posición de la primera vocal de un texto introducido por teclado. -->
+    <script>
+      let keepAsking = true;
+      while (keepAsking) {
+        let string = prompt("Ingrese la cadena de texto deseada");
+        if (string === null) {
+          alert("No se detecto texto valido");
+          keepAsking = confirm("Desea continuar?");
+          continue;
+        }
+        if (!isNaN(string)) {
+          alert("No ingresó texto válido");
+          continue;
+        }
+
+        let pos = string.search(/[aeiou]/i);
+        if (pos !== -1) {
+          let vocalPosition = string.charAt(pos);
+          console.log(
+            `La posicion de la primera vocal en la palabra es: "${vocalPosition}" `
+          );
+        } else {
+          console.log("No se encontraron vocales en la cadena de texto.");
+        }
+        break;
+      }
+      alert("Programa terminado consulte la consola.");
+    </script>
+  </body>
+</html>

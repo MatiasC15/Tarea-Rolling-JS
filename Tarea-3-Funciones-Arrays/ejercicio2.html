@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities</title>
+</head>
+<body>
+    <!-- 2-  Crear un script que solicite al usuario mediante un prompt el nombre de ciudades y almacenarlas en un arreglo, cuando el usuario selecciona cancelar se debe mostrar el arreglo generado, luego realizar las siguientes acciones:
+
+Mostrar la longitud del arreglo.
+Mostrar en el documento web los ítems de las posiciones primera, tercera y última.
+Añade en última posición la ciudad de París.
+Escribe por pantalla el elemento que ocupa la segunda posición.
+Sustituye el elemento que ocupa la segunda posición por la ciudad de 'Barcelona'. -->
+
+    <script>
+        let keepAsking = true
+        let firstCountriesArray = []
+        
+        while(keepAsking){
+            let countries = prompt("Ingrese los nombres de paises/ciudades que desee añadir al arreglo")
+            if(countries ===""){
+                alert("Ud no ha ingresado nada ");
+                keepAsking = confirm("Desea continuar?");
+                continue;
+               
+            } if (countries === null ){
+                break;
+            } 
+            if (countries.charAt(0) !== countries.charAt(0).toUpperCase()) {
+                alert("Por favor, escriba el nombre con la primera letra en mayúscula.")
+                continue;
+            }
+            
+                firstCountriesArray.push(countries);
+            
+        }
+            
+            if ( firstCountriesArray.length > 0){
+                firstCountriesArray.push("Paris");
+                firstCountriesArray[1] = "Barcelona";
+                document.write("El array resultante es: " + firstCountriesArray + "." +  "<br><br>");
+                document.write("La longitud del arreglo resultante es: " + firstCountriesArray.length+ "." + "<br><br>");
+                
+                document.write("El primer elemento es " + firstCountriesArray[0] + ", el tercer elemento es " + firstCountriesArray[2] + ", y el ultimo elemento es " + firstCountriesArray[firstCountriesArray.length-1]+ "." + "<br><br>");
+                document.write("El elemento que ocupa la segunda posicion es: " + firstCountriesArray[1] + ".")
+                alert("Programa terminado")
+            }else{
+                alert("Programa terminado");
+            }
+            
+            
+       
+        
+    </script>
+</body>
+</html>

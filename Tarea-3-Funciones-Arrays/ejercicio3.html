@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 3- Escribir un script que simule el lanzamiento de dos dados. Hacer uso de la función Math.random para obtener números aleatorios entre 1 y 6 para cada uno de los lanzamientos de los dados. Sumar el resultado de lanzar dos dados y anotar en un array el número de apariciones de dicha suma, repitiendo 50 veces esta operación. -->
+<script>
+    
+let count = {};
+//se inicializa un objeto vacío llamado count, el cual se usará para almacenar las sumas obtenidas en los lanzamientos de los dados y su frecuencia. Siendo las posibles propiedades del objeto las sumas del 2 al 12.
+
+for (let i = 0; i < 50; i++) { //se realiza un ciclo for que repetira tanto el  lanzamiento de los dados como su suma 50 veces 
+  
+  let dice1 = Math.floor(Math.random() * 6) + 1; 
+  // se replica el lanzamiento del dado , con la funcion math random generando un numero entre 0 y 1, luego multiplicando por 6 para que sea un numero entre 0 y menor que 6, luego math floor que redondea el numero hacia abajo y al final sumando +1 para que asi el numero resultante siempre sea un numero entre 1 y 6.
+  let dice2 = Math.floor(Math.random() * 6) + 1; 
+  // aplica lo mismo que para el primer dado
+  let sum = dice1 + dice2; 
+  //se guarda la suma del resultado del lanzamiento de los dados 1 y 2 en la variable sum, siendo las posibles sumas del 2 al 12
+  if (count[sum]) {
+    count[sum]++;              
+     // dentro del if se verifica si la suma sum ya ha sido registrada en el objeto count. Esto se hace accediendo a la propiedad sum del objeto count.
+     // si la suma sum ya ha sido registrada, se aumenta en 1 el valor asociado a la propiedad sum del objeto count.
+  } else {
+    count[sum] = 1;
+  }
+  // si la suma sum no ha sido registrada previamente en el objeto count, se ejecuta lo que está dentro del bloque de código que sigue a esta línea.
+
+ //count[sum] = 1;: se crea una nueva propiedad en el objeto count con el nombre sum y se le asigna el valor 1. Esto indica que la suma sum ha aparecido por primera vez en el experimento.
+}
+
+console.log(count);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         9.- Escribe un programa que pida una frase y escriba las vocales que aparecen
+// Nota: Tener en cuenta la función length y substring o charAt
+let frase = prompt("Introduce una frase: ");
+let vocales = "";
+
+for (let i = 0; i < frase.length; i++) {
+  let letra = frase.charAt(i).toLowerCase();//la funcion charAt extrae la letra en la posicion en la que se encuentre el contador i luego con toLowerCase la convierte a minuscula para que sea facil de comparar con las vocales. Y luego guarda en la variable letra cada letra extraida por la funcion chartAt
+  if (letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u") {
+    vocales += letra + " "; //equivalente a escribir vocales = vocales + letra + ""
+  }
+}
+
+document.write("Las vocales en la frase son: " + vocales);
+
+    </script>
+</body>
+</html>

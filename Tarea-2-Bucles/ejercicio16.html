@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 16- Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”. -->
+
+    <script>
+        let keepAsking = true;
+         while(keepAsking){
+             let string = prompt("Ingrese la cadena de texto que desee invertir");
+             if (string === null) {
+          alert("No se detecto texto valido");
+          keepAsking = confirm("Desea continuar?");
+          continue;
+        }
+        if (!isNaN(string)) {
+          alert("No ingresó texto válido");
+          continue;
+        }
+        let splitString = string.split("")
+        let inverseString = splitString. reverse().join("")
+        console.log(`El texto "${string}" invertido es el siguiente: ${inverseString}`)
+        break;
+         }
+         alert("Programa terminado consulte la consola.")
+    </script>
+</body>
+</html>

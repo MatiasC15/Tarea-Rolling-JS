@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2- Definir una función que muestre información sobre una cadena de texto que se le pasa como argumento. A partir de la cadena que se le pasa, la función determina si esa cadena está formada sólo por mayúsculas, sólo por minúsculas o por una mezcla de ambas. -->
+
+    <script>
+        
+        function chainText(chain){
+            let isLower = true;
+            let isUpper = true;
+                for (let i = 0; i < chain.length; i++) {
+                    if (chain[i] !== chain[i].toLowerCase()) {
+                    isLower = false;
+                    }
+                    if (chain[i] !== chain[i].toUpperCase()) {
+                    isUpper = false;
+                    }
+                }
+
+                if (isLower) {
+                    return "La cadena está formada solo por minúsculas";
+                } else if (isUpper) {
+                    return "La cadena está formada solo por mayúsculas";
+                } else {
+                    return "La cadena está formada por minúsculas y mayúsculas";
+                }
+            }
+                        console.log(chainText("Dejo una Cadena de Prueba "));
+    </script>
+</body>
+</html>
