@@ -12,16 +12,16 @@
 
     <script>
       function showTable() {
-        // Obtener el número ingresado por el usuario
+        
         const number = parseInt(document.getElementById("number").value);
 
-        // Crear la tabla de multiplicar
+       
         let multiplyTable = "";
         for (let i = 1; i <= 10; i++) {
           multiplyTable += `${number} x ${i} = ${number * i}<br>`;
         }
 
-        // Mostrar la tabla en la página
+       
         document.getElementById("table").innerHTML = multiplyTable;
       }
     </script>
